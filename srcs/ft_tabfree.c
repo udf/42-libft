@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 12:31:34 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/06 12:26:29 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/06/12 08:22:31 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	**ft_tabfree(void **tab)
 {
+	void **first;
+
+	first = tab;
 	if (tab)
 	{
 		while (*tab)
@@ -21,7 +24,7 @@ void	**ft_tabfree(void **tab)
 			free(*tab);
 			tab++;
 		}
-		free(tab);
+		free(first);
 	}
 	return (NULL);
 }
