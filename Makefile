@@ -6,7 +6,7 @@
 #    By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 07:39:20 by mhoosen           #+#    #+#              #
-#    Updated: 2018/06/12 07:33:02 by mhoosen          ###   ########.fr        #
+#    Updated: 2018/06/29 10:10:57 by mhoosen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,15 @@ ft_strmap ft_strmapi ft_strequ ft_strnequ ft_strsub ft_strjoin ft_strtrim \
 ft_strsplit ft_itoa ft_putchar ft_putstr ft_putendl ft_putnbr ft_putchar_fd \
 ft_putstr_fd ft_putendl_fd ft_putnbr_fd\
 \
-ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap\
+ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
 \
-ft_tabfree ft_mem_resize ft_strchr_region
+ft_tabfree ft_mem_resize ft_strchr_region \
+vec_new vec_free vec_append vec_reserve
 
 SRCS=$(FUNCS:%=srcs/%.c)
 OBJS=$(FUNCS:=.o)
 NAME=libft.a
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -Wconversion
 
 all: $(NAME)
 
