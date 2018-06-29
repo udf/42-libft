@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/29 09:10:57 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/06/29 12:11:30 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 ** Vec: a stupid attempt at a generic dynamically expandable array
 ** data: pointer to data
 ** type_size: size of the type stored
-** data_len: length of stored data (multiples of type_size)
-** data_size: actual byte length of data's memory
-** num_elements: number of stored elements; equal to data_len / type_size
+** length: number of stored elements
+** size: size of the allocated memory in number of elements
 */
 typedef struct	s_vec
 {
 	void		*data;
 	size_t		type_size;
-	size_t		data_len;
-	size_t		data_size;
-	size_t		num_elements;
+	size_t		length;
+	size_t		size;
 }				t_vec;
 
 /*
@@ -44,7 +42,7 @@ t_vec			*vec_new(size_t type_size, size_t capacity);
 ** Frees a vector and sets its ptr to NULL
 */
 void			vec_free(t_vec **v);
-
+ 
 /*
 ** ret: number of elements added (0 if tries and fails to allocate new memory)
 ** Appends an item to the end of a vector
@@ -57,14 +55,13 @@ size_t			vec_append(t_vec *v, void *item);
 ** ret: 1 if successful, else 0
 ** Reserves space for n elements, fails if elements would be truncated
 ** v: the vector to reserve space on
-** n: the number of elements to reserve space for
+** new_size: the new size after reserving space, must be > length
 */
 int				vec_reserve(t_vec *v, size_t n);
 
 /*
 ** TODO:
 ** vec_extend (append raw array)
-** vec_find
 ** vec_popone (modify original vec, alloc + return raw data)
 ** vec_poprange (same as above)
 ** vec_removeone (same as pop but dont alloc/ret)

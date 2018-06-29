@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:49:41 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/27 16:38:47 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/06/29 11:27:34 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_vec	*vec_new(size_t type_size, size_t capacity)
 	v->type_size = type_size;
 	if (capacity)
 	{
-		v->data_size = type_size * capacity;
-		v->data = ft_memalloc(v->data_size);
+		v->size = capacity;
+		v->data = ft_memalloc(capacity * type_size);
 	}
 	return (v);
 }
