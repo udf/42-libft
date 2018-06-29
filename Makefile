@@ -6,7 +6,7 @@
 #    By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 07:39:20 by mhoosen           #+#    #+#              #
-#    Updated: 2018/06/29 10:10:57 by mhoosen          ###   ########.fr        #
+#    Updated: 2018/06/29 11:04:34 by mhoosen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ vec_new vec_free vec_append vec_reserve
 
 SRCS=$(FUNCS:%=srcs/%.c)
 OBJS=$(FUNCS:=.o)
+TEST_SRCS=$(wildcard tests/t_*.c)
+TEST_BINS=$(TEST_SRCS:%.c=%)
 NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror -Wconversion
 
@@ -43,5 +45,11 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+bla:
+	echo $(TEST_SRCS)
+
+tests: $(TEST_SRCS) all
+	$(foreach test_src, $(TEST_SRCS), gcc -L . -lft -I includes -o $(test_src:tests/%.c=tests/bin/%) $(test_src))
 
 re: fclean all
