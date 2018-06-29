@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/29 12:11:30 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/06/29 13:52:57 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,16 @@ size_t			vec_append(t_vec *v, void *item);
 int				vec_reserve(t_vec *v, size_t n);
 
 /*
+** ret: number of elements added (0 if tries and fails to allocate new memory)
+** Appends an array to the end of a vector
+** v: the vector to append the items to
+** items: pointer to an array of items
+** num: number of items that items contains
+*/
+size_t			vec_extend(t_vec *v, void *items, size_t num);
+
+/*
 ** TODO:
-** vec_extend (append raw array)
 ** vec_popone (modify original vec, alloc + return raw data)
 ** vec_poprange (same as above)
 ** vec_removeone (same as pop but dont alloc/ret)
