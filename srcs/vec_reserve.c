@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 09:10:11 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/29 13:36:20 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/03 11:05:41 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	vec_reserve(t_vec *v, size_t n)
 	void	*tmp_data;
 	size_t	new_size;
 
-	if (n < v->length)
+	if (!v || n < v->length)
 		return (0);
 	if (n == v->length)
 		return (1);
