@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   vec_del_last.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/28 10:49:07 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/03 14:00:46 by mhoosen          ###   ########.fr       */
+/*   Created: 2018/07/03 14:40:32 by mhoosen           #+#    #+#             */
+/*   Updated: 2018/07/03 14:41:22 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h> // aaa
+#include "vec.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		vec_del_last(t_vec *v)
 {
-	size_t i;
-
-	printf("Copying %zu bytes from %p to %p\n", n, src, dst);
-
-	i = 0;
-	while (i < n)
-	{
-		((t_byte *)dst)[i] = ((const t_byte *)src)[i];
-		i++;
-	}
-	return (dst);
+	if (v->length == 0)
+		return (0);
+	v->length--;
+	return (1);
 }

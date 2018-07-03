@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/29 13:52:57 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/03 13:36:47 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,24 @@ t_vec			*vec_new(size_t type_size, size_t capacity);
 void			vec_free(t_vec **v);
  
 /*
-** ret: number of elements added (0 if tries and fails to allocate new memory)
 ** Appends an item to the end of a vector
+** ret: number of elements added (0 if tries and fails to allocate new memory)
 ** v: the vector to append the item to
 ** item: the item to append (which should be v->type_size long)
 */
 size_t			vec_append(t_vec *v, void *item);
 
 /*
-** ret: 1 if successful, else 0
 ** Reserves space for n elements, fails if elements would be truncated
+** ret: 1 if successful, else 0
 ** v: the vector to reserve space on
 ** new_size: the new size after reserving space, must be > length
 */
 int				vec_reserve(t_vec *v, size_t n);
 
 /*
-** ret: number of elements added (0 if tries and fails to allocate new memory)
 ** Appends an array to the end of a vector
+** ret: number of elements added (0 if tries and fails to allocate new memory)
 ** v: the vector to append the items to
 ** items: pointer to an array of items
 ** num: number of items that items contains
@@ -69,13 +69,36 @@ int				vec_reserve(t_vec *v, size_t n);
 size_t			vec_extend(t_vec *v, void *items, size_t num);
 
 /*
-** TODO:
-** vec_popone (modify original vec, alloc + return raw data)
-** vec_poprange (same as above)
-** vec_removeone (same as pop but dont alloc/ret)
-** vec_removerange
-** vec_finalise (copies only valid data and frees itself, then rets the data)
+** TODO: maybe _range versions that act like python's slicing
+** These are all variations of the same function
+** vec_[pop|del|dup]_[one|last|n]
+**
+** ret:  one: pointer to copy of element, or NULL if oob
+**      last: same as above
+**         n: pointer to array of elements, or NULL if oob
+**
+** pop - copies, removes, and returns the specified element(s)
+** del - removes the specified element(s)
+** dup - copies and returns the specified element(s)
+**
+** one - applies the operation on one index
+** last - applies the operation on the last index
+** n - applies the operation on n indices starting from the first
+*/
+void			*vec_pop_one(t_vec *v, size_t i);
+void			*vec_pop_last(t_vec *v);
+void			*vec_pop_n(t_vec *v, size_t n);
 
-** TESTS (lol)
+int				vec_del_one(t_vec *v, size_t i);
+int				vec_del_last(t_vec *v);
+int				vec_del_n(t_vec *v, size_t n);
+
+void			*vec_dup_one(t_vec *v, size_t i);
+void			*vec_dup_last(t_vec *v);
+void			*vec_dup_n(t_vec *v, size_t n);
+
+/*
+** TODO:
+** vec_finalise (copies only valid data and frees itself, then rets the data)
 */
 #endif
