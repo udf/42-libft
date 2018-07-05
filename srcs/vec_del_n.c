@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 12:19:19 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 12:50:48 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 17:00:17 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,13 @@ int	vec_del_n(t_vec *v, size_t n)
 	size_t byte_len;
 	t_byte *data;
 
-	if (!v || !n || n > v->length)
+	if (!v || !n)
 		return (0);
+	if (n >= v->length)
+	{
+		v->length = 0;
+		return (1);
+	}
 	i = n * v->type_size;
 	start = i;
 	data = (t_byte *)v->data;

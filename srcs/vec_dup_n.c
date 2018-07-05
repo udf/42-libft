@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_reserve.c                                      :+:      :+:    :+:   */
+/*   vec_dup_n.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/29 09:10:11 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 16:49:04 by mhoosen          ###   ########.fr       */
+/*   Created: 2018/07/05 13:18:39 by mhoosen           #+#    #+#             */
+/*   Updated: 2018/07/05 13:22:38 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
-#include <stdio.h>
 
-int	vec_reserve(t_vec *v, size_t n)
+void			*vec_dup_n(t_vec *v, size_t n)
 {
-	void	*tmp_data;
-	size_t	new_size;
+	size_t byte_n;
 
-	if (!v || n < v->length)
-		return (0);
-	if (n == v->length)
-		return (1);
-	new_size = n * v->type_size;
-	tmp_data = ft_mem_resize(v->data, v->length * v->type_size, new_size);
-	if (!tmp_data)
-		return (0);
-	free(v->data);
-	v->size = n;
-	v->data = tmp_data;
-	return (1);
+	if (!v || n > v->length)
+		return (NULL);
+	byte_n = n * v->type_size;
+	return (ft_mem_resize(v->data, byte_n, byte_n));
 }
