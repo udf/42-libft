@@ -6,13 +6,13 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 14:40:32 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/03 14:41:22 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 12:19:44 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
 
-int		vec_del_last(t_vec *v)
+int	vec_del_last(t_vec *v)
 {
 	if (v->length == 0)
 		return (0);

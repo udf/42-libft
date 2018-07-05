@@ -6,13 +6,13 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:25:03 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/03 14:41:24 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 12:19:43 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
 
-int		vec_del_one(t_vec *v, size_t i)
+int	vec_del_one(t_vec *v, size_t i)
 {
 	t_byte *data;
 	size_t m;
