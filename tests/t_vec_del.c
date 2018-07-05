@@ -37,6 +37,11 @@ int main()
 		print_vec(v);
 	}
 
+	printf("testing del n\n");
+	vec_del_n(v, 3);
+	printf("delted 3\n");
+	print_vec(v);
+
 	vec_free(&v);
 	return 0;
 }
