@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/03 13:36:47 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 12:17:55 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int				vec_reserve(t_vec *v, size_t n);
 size_t			vec_extend(t_vec *v, void *items, size_t num);
 
 /*
-** TODO: maybe _range versions that act like python's slicing
+** TODO: maybe _range versions that take (start, n)
 ** These are all variations of the same function
 ** vec_[pop|del|dup]_[one|last|n]
 **
