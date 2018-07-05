@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 12:17:55 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 12:26:35 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,10 @@ size_t			vec_extend(t_vec *v, void *items, size_t num);
 ** These are all variations of the same function
 ** vec_[pop|del|dup]_[one|last|n]
 **
-** ret:  one: pointer to copy of element, or NULL if oob
-**      last: same as above
-**         n: pointer to array of elements, or NULL if oob
+** ret:     one: pointer to copy of element, or NULL if oob
+**         last: same as above
+**            n: pointer to array of elements, or NULL if oob
+**      *_del_*: returns 1 if the element(s) were successfully deleted
 **
 ** pop - copies, removes, and returns the specified element(s)
 ** del - removes the specified element(s)
