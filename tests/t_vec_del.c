@@ -3,6 +3,7 @@
 
 void print_vec(t_vec *v)
 {
+	printf("len:%zu  ", v->length);
 	for (size_t i = 0; i < v->length; i++)
 		printf("%d ", ((int*)(v->data))[i]);
 	printf("\n");
@@ -28,6 +29,13 @@ int main()
 	show_del_one(v, 0);
 	show_del_one(v, 6);
 	show_del_one(v, 988);
+
+	printf("testing del last\n");
+	while (v->length >= 7)
+	{
+		vec_del_last(v);
+		print_vec(v);
+	}
 
 	vec_free(&v);
 	return 0;
