@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 14:40:32 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 12:19:44 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/05 12:35:27 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	vec_del_last(t_vec *v)
 {
-	if (v->length == 0)
+	if (!v || v->length == 0)
 		return (0);
 	v->length--;
 	return (1);
