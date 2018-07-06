@@ -6,7 +6,7 @@
 #    By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 07:39:20 by mhoosen           #+#    #+#              #
-#    Updated: 2018/07/05 13:47:23 by mhoosen          ###   ########.fr        #
+#    Updated: 2018/07/06 11:37:06 by mhoosen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,6 @@ fclean: clean
 tests: all $(TEST_BINS)
 
 $(TEST_BINS): $(TEST_SRCS) $(SRCS)
-	gcc -L . -lft -I includes -o $@ $(@:tests/bin/%=tests/%.c)
+	gcc -I includes -o $@ $(@:tests/bin/%=tests/%.c) -L . -lft
 
 re: fclean all
