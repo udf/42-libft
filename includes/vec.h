@@ -6,12 +6,12 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 12:26:35 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/06 11:19:09 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTOR_H
-# define VECTOR_H
+#ifndef VEC_H
+# define VEC_H
 # include "libft.h"
 
 /*

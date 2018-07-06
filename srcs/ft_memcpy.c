@@ -6,12 +6,11 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 10:49:07 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 16:48:53 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/06 11:20:01 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h> // aaa
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

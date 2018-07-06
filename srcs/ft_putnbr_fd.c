@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhoosen <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 09:38:46 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/05/31 09:38:47 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/06 11:31:24 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_putnbr_internal(int n, int fd)
 	if (n == 0)
 		return ;
 	ft_putnbr_internal(n / 10, fd);
-	ft_putchar_fd('0' + ABS(n % 10), fd);
+	ft_putchar_fd((char)('0' + ABS(n % 10)), fd);
 }
 
 void		ft_putnbr_fd(int n, int fd)

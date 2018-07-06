@@ -6,13 +6,13 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 16:09:46 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/27 16:37:18 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/06 11:21:05 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
 
-void vec_free(t_vec **v)
+void	vec_free(t_vec **v)
 {
 	if (!v || !*v)
 		return ;

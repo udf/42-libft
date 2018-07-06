@@ -6,13 +6,13 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 13:52:28 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 17:03:52 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/06 11:20:23 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char *pop_line(t_vec *buf, ssize_t nl_index)
+static char	*pop_line(t_vec *buf, ssize_t nl_index)
 {
 	char	*str;
 	size_t	line_len;
@@ -51,7 +51,7 @@ int			get_next_line(const int fd, char **line)
 		if (n_read < 0)
 			return (free_ret(&bufs[fd], GNL_ERROR));
 		if (n_read == 0)
-			break;
+			break ;
 		vec_extend(bufs[fd], (void*)temp, (size_t)n_read);
 	}
 	if (bufs[fd]->length == 0 && n_read == 0)
