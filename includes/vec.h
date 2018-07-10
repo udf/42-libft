@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/06 11:19:09 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/10 19:33:35 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 ** data: pointer to data
 ** type_size: size of the type stored
 ** length: number of stored elements
-** size: size of the allocated memory in number of elements
+** mem_size: size of the allocated memory in bytes
 */
 typedef struct	s_vec
 {
 	void		*data;
 	size_t		type_size;
 	size_t		length;
-	size_t		size;
+	size_t		mem_size;
 }				t_vec;
 
 /*

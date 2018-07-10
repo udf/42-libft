@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec_new.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:49:41 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/29 11:27:34 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/10 19:36:06 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_vec	*vec_new(size_t type_size, size_t capacity)
 	v->type_size = type_size;
 	if (capacity)
 	{
-		v->size = capacity;
-		v->data = ft_memalloc(capacity * type_size);
+		v->mem_size = capacity * type_size;
+		v->data = ft_memalloc(v->mem_size);
 	}
 	return (v);
 }

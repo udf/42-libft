@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec_reserve.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 09:10:11 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/05 16:49:04 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/10 19:59:01 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	vec_reserve(t_vec *v, size_t n)
 	if (!tmp_data)
 		return (0);
 	free(v->data);
-	v->size = n;
+	v->mem_size = new_size;
 	v->data = tmp_data;
 	return (1);
 }
