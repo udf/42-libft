@@ -6,12 +6,11 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 11:45:10 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/06/04 11:35:46 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/18 21:10:44 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_splits(char const *s, char c)
 {
