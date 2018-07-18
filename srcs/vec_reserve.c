@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vec_reserve.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 09:10:11 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/10 19:59:01 by anonymous        ###   ########.fr       */
+/*   Updated: 2018/07/18 21:51:06 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
-#include <stdio.h>
 
 int	vec_reserve(t_vec *v, size_t n)
 {
