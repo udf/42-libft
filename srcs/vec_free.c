@@ -6,17 +6,18 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 16:09:46 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/06 11:21:05 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/26 13:51:33 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
 
-void	vec_free(t_vec **v)
+void	vec_free(t_vec *v)
 {
-	if (!v || !*v)
+	if (!v)
 		return ;
-	free((*v)->data);
-	free(*v);
-	*v = NULL;
+	v->type_size = 0;
+	v->length = 0;
+	free(v->data);
+	v->mem_size = 0;
 }

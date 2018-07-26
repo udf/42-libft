@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 13:52:28 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/06 11:20:23 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/07/26 13:53:31 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*pop_line(t_vec *buf, ssize_t nl_index)
 	return (str);
 }
 
-static int	free_ret(t_vec **buffer, int ret)
+static int	free_ret(t_vec *buffer, int ret)
 {
 	vec_free(buffer);
 	return (ret);
@@ -33,29 +33,29 @@ static int	free_ret(t_vec **buffer, int ret)
 
 int			get_next_line(const int fd, char **line)
 {
-	static t_vec	*bufs[MAX_FD] = {NULL};
+	static t_vec	bufs[MAX_FD] = {NULL};
 	ssize_t			nl_index;
 	ssize_t			n_read;
 	char			temp[BUFF_SIZE];
 
 	if (fd < 0 || fd >= MAX_FD)
 		return (GNL_ERROR);
-	if (!bufs[fd])
-		if (!(bufs[fd] = vec_new(1, BUFF_SIZE)))
+	if (bufs[fd].type_size == 0)
+		if (!vec_init(&bufs[fd], 1, BUFF_SIZE))
 			return (GNL_ERROR);
-	n_read = (ssize_t)bufs[fd]->length;
-	while ((nl_index = ft_strchr_region(bufs[fd]->data, '\n',
-					bufs[fd]->length - (size_t)n_read, bufs[fd]->length)) < 0)
+	n_read = (ssize_t)bufs[fd].length;
+	while ((nl_index = ft_strchr_region(bufs[fd].data, '\n',
+					bufs[fd].length - (size_t)n_read, bufs[fd].length)) < 0)
 	{
 		n_read = read(fd, (void*)temp, BUFF_SIZE);
 		if (n_read < 0)
 			return (free_ret(&bufs[fd], GNL_ERROR));
 		if (n_read == 0)
 			break ;
-		vec_extend(bufs[fd], (void*)temp, (size_t)n_read);
+		vec_extend(&bufs[fd], (void*)temp, (size_t)n_read);
 	}
-	if (bufs[fd]->length == 0 && n_read == 0)
+	if (bufs[fd].length == 0 && n_read == 0)
 		return (free_ret(&bufs[fd], GNL_COMPLETE));
-	*line = pop_line(bufs[fd], nl_index);
+	*line = pop_line(&bufs[fd], nl_index);
 	return (*line ? GNL_SUCCESS : free_ret(&bufs[fd], GNL_ERROR));
 }

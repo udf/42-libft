@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vec.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/10 19:33:35 by anonymous        ###   ########.fr       */
+/*   Updated: 2018/07/26 13:52:25 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ typedef struct	s_vec
 }				t_vec;
 
 /*
-** Creates a vector with a specified capacity
-** ret: pointer to allocated t_vec
+** Initializes a vector with a specified capacity
+** ret: 1 if successful, 0 otherwise
 ** type_size: the size (in bytes) of the type that is going to be stored
 **         (all indicies will use this to calculate the *real* byte size/offset)
 ** capacity: the initial amount of space for elements
 */
-t_vec			*vec_new(size_t type_size, size_t capacity);
+int				vec_init(t_vec *v, size_t type_size, size_t capacity);
 
 /*
-** Frees a vector and sets its ptr to NULL
+** Frees a vector's data, and sets its attributes to 0
 */
-void			vec_free(t_vec **v);
- 
+void			vec_free(t_vec *v);
+
 /*
 ** Appends an item to the end of a vector
 ** ret: number of elements added (0 if tries and fails to allocate new memory)
