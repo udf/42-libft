@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/26 13:52:25 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/02 19:29:53 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ void			vec_free(t_vec *v);
 ** item: the item to append (which should be v->type_size long)
 */
 size_t			vec_append(t_vec *v, void *item);
+
+/*
+** Fills all elements of a vector with item
+** v: the vector to fill with item
+** item: the item to fill with (which should be v->type_size long)
+*/
+void			vec_fill(t_vec *v, void *item);
 
 /*
 ** Reserves space for n elements, fails if elements would be truncated
