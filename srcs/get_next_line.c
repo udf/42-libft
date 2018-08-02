@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/05 13:52:28 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/26 13:53:31 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/02 14:42:20 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	free_ret(t_vec *buffer, int ret)
 
 int			get_next_line(const int fd, char **line)
 {
-	static t_vec	bufs[MAX_FD] = {NULL};
+	static t_vec	bufs[MAX_FD];
 	ssize_t			nl_index;
 	ssize_t			n_read;
 	char			temp[BUFF_SIZE];
