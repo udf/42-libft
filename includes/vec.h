@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/02 19:29:53 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/05 01:03:11 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,14 @@ int				vec_init(t_vec *v, size_t type_size, size_t capacity);
 ** Frees a vector's data, and sets its attributes to 0
 */
 void			vec_free(t_vec *v);
+
+/*
+** Returns a pointer to an item
+** get2D assumes the vector is a stored as a run like 111122223333 where
+** w=4 h=3 (not checked), and the numbers of the items correspond to the y pos
+*/
+void			*vec_get(t_vec *v, size_t i);
+void			*vec_get2D(t_vec *v, size_t x, size_t y, size_t w);
 
 /*
 ** Appends an item to the end of a vector
