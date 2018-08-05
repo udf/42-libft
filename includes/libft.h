@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:26:16 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/02 13:57:52 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/05 16:50:08 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ typedef struct			s_list
 }						t_list;
 
 typedef unsigned char	t_byte;
+
+/*
+** Ranges for ft_*map*
+*/
+typedef struct			s_frange
+{
+	float				s;
+	float				e;
+}						t_frange;
+
+typedef struct			s_lrange
+{
+	long				s;
+	long				e;
+}						t_lrange;
 
 /*
 ** mandatory part
@@ -115,5 +130,13 @@ void					*ft_mem_resize(const void *src, size_t old_size,
 															size_t new_size);
 char					*ft_strlower(char *s);
 char					*ft_strupper(char *s);
+
+/*
+** Maps a value from one range to another
+*/
+float					ft_fmapf(float n, t_frange r1, t_frange r2);
+long					ft_lmapl(long n, t_lrange r1, t_lrange r2);
+float					ft_lmapf(long n, t_lrange r1, t_frange r2);
+long					ft_fmapl(float n, t_frange r1, t_lrange r2);
 
 #endif
