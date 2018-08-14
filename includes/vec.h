@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 15:50:18 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/06 12:47:10 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/14 21:20:29 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void			vec_free(t_vec *v);
 ** w=4 h=3 (not checked), and the numbers of the items correspond to the y pos
 */
 void			*vec_get(t_vec *v, size_t i);
+void			*vec_get_back(t_vec *v);
 void			*vec_get_2d(t_vec *v, size_t x, size_t y, size_t w);
 
 /*
