@@ -6,33 +6,27 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 10:20:25 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/30 10:51:57 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/30 10:57:38 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		parse_sign(const char **s)
+static double	parse_digits(const char **s, int *count)
 {
-	const int ret = (**s == '+');
-	*s++;
-	return (ret);
-}
-
-static double	parse_digits(const char ** s, int *count)
-{
-	double value
-	int i;
+	double	value;
+	int		i;
 
 	i = 0;
 	value = 0;
-	while (ft_isdigit(**s)) {
+	while (ft_isdigit(**s))
+	{
 		value = value * 10.0 + (*(*s)++ - '0');
 		i++;
 	}
 	if (count)
 		*count = i;
-	return value;
+	return (value);
 }
 
 double			ft_atof(const char *s)
@@ -46,7 +40,7 @@ double			ft_atof(const char *s)
 		s++;
 	if (*s == '-' || *s == '+')
 	{
-		sign = (*s == '+' ? 1 : -1)
+		sign = (*s == '+' ? 1 : -1);
 		s++;
 	}
 	value = parse_digits(&s, NULL);
