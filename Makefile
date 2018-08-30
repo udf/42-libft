@@ -6,7 +6,7 @@
 #    By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/25 07:39:20 by mhoosen           #+#    #+#              #
-#    Updated: 2018/08/30 10:52:29 by mhoosen          ###   ########.fr        #
+#    Updated: 2018/08/30 10:52:51 by mhoosen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ ft_putstr_fd ft_putendl_fd ft_putnbr_fd\
 ft_lstnew ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap \
 \
 ft_tabfree ft_mem_resize ft_strchr_region ft_strupper ft_strlower ft_rmap \
-ft_isspace ft_atof\
+ft_isspace ft_atof ft_tokenseek \
 \
 vec_init vec_free vec_append vec_reserve vec_extend vec_fill vec_get \
 vec_del_one vec_del_last vec_del_n \

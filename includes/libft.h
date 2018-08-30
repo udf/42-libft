@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:26:16 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/30 10:51:31 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/30 10:53:18 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ char					*ft_strlower(char *s);
 char					*ft_strupper(char *s);
 int						ft_isspace(char c);
 double					ft_atof(const char *s);
+size_t					ft_tokenseek(char **str);
 
 /*
 ** Maps a value from one range to another
