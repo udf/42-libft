@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:26:16 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/05 16:50:08 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/30 10:50:14 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ void					*ft_mem_resize(const void *src, size_t old_size,
 															size_t new_size);
 char					*ft_strlower(char *s);
 char					*ft_strupper(char *s);
+int						ft_isspace(char c);
 
 /*
 ** Maps a value from one range to another
