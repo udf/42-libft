@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vec_extend.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 12:28:30 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/07/10 19:49:41 by anonymous        ###   ########.fr       */
+/*   Updated: 2018/08/23 15:03:29 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vec.h"
-#include <stdio.h>
 
 size_t	vec_extend(t_vec *v, void *items, size_t num)
 {
