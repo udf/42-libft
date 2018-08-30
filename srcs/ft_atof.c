@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 10:20:25 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/30 10:57:38 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/08/30 11:17:11 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ double			ft_atof(const char *s)
 
 	while (ft_isspace(*s))
 		s++;
+	sign = 1.0f;
 	if (*s == '-' || *s == '+')
 	{
 		sign = (*s == '+' ? 1 : -1);
