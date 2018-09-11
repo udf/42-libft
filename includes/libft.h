@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/08 13:26:16 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/30 11:09:37 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/09/10 09:53:31 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,8 @@ void					*ft_mem_resize(const void *src, size_t old_size,
 char					*ft_strlower(char *s);
 char					*ft_strupper(char *s);
 int						ft_isspace(char c);
-double					ft_atof(const char *s);
+float					ft_atof(const char *s);
+const char				*ft_atof_seek(const char *s, float *out);
 size_t					ft_tokenseek(char **str);
 size_t					ft_tokenseek_next(char **str);
 

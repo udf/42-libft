@@ -6,7 +6,7 @@
 /*   By: mhoosen <mhoosen@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 10:20:25 by mhoosen           #+#    #+#             */
-/*   Updated: 2018/08/30 11:17:11 by mhoosen          ###   ########.fr       */
+/*   Updated: 2018/09/10 09:53:18 by mhoosen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static double	parse_digits(const char **s, int *count)
 	return (value);
 }
 
-double			ft_atof(const char *s)
+const char		*ft_atof_seek(const char *s, float *out)
 {
 	double	sign;
 	double	value;
@@ -54,5 +54,14 @@ double			ft_atof(const char *s)
 			fraction /= 10.0;
 		value += fraction;
 	}
-	return (value * sign);
+	*out = (float)(value * sign);
+	return (s);
+}
+
+float			ft_atof(const char *s)
+{
+	float	value;
+
+	ft_atof_seek(s, &value);
+	return (value);
 }
